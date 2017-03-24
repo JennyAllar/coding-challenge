@@ -1,0 +1,7 @@
+<%= form_for @company do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :location %>
+  <%= f.text_area :description, size: "60x12" %>
+  <%= f.text_field :fun_fact %>
+  <%= f.submit "Add Company" %>
+<% end %>
