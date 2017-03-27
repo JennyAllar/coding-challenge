@@ -1,0 +1,2 @@
+jQuery ->
+  $('#date-founded').datepicker()

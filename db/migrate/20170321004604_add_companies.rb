@@ -3,8 +3,9 @@ class AddCompanies < ActiveRecord::Migration
     create_table :companies do |t|
       t.string :name
       t.text :description
-      t.string :location
-      t.text :fun_fact
+      t.string :city
+      t.string :state
+      t.string :date_founded 
 
       t.timestamps
     end

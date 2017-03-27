@@ -1,3 +1,68 @@
-<%= @company.name %>, <%= @company.location %>
-<%= link_to 'Edit Company', edit_company_path %>
-<%= link_to 'Delete Company', company_path, method: "delete" %>
+<!-- <div class="panel panel-default">
+  <div class="panel-body">
+    <div class="col-md-12">
+      <h2 class="centered">
+        <%= @company.name %>
+      <h2>
+    </div>
+    <div class="col-md-6 col-centered col-md-offset-4">
+      <span class="margin-right-md"><%= @company.pretty_date %></span>
+      <span class="margin-right-sm"><%= @company.location %></span>
+      <span class="margin-right-sm">&#124;</span>
+      <%= button_to "Edit Company", edit_company_path, method: "get", form: {style: 'display:inline-block;'}, class: 'btn btn-primary'%>
+      <%= button_to "Delete Company", company_path, method: "delete", form: {style: 'display:inline-block;'}, class: 'btn btn-primary'%>
+    </div>
+    <div class="col-md-10 col-centered col-md-offset-1 margin-top-lg">
+      <%= @company.description %>
+    </div>
+  </div>
+  <div class="panel-footer">
+    Founders
+  </div>
+  <div class="panel-footer">
+    Categories
+  </div>
+</div>
+<div class="align-right">
+  <%= link_to "Back to Companies", companies_path %>
+</div> -->
+
+
+
+<div class="panel-group" id="accordion" role="tablist">
+	<div class="panel panel-default">
+		<div class="panel-heading clearfix" role="tab" id="headingOne">
+			<h2 class="centered">
+				<%= @company.name %>
+      </h2>
+      <div class="col-md-6 col-centered col-md-offset-4">
+        <span class="margin-right-md"><%= @company.pretty_date %></span>
+        <span class="margin-right-sm"><%= @company.location %></span>
+        <span class="margin-right-sm">&#124;</span>
+        <%= button_to "Edit Company", edit_company_path, method: "get", form: {style: 'display:inline-block;'}, class: 'btn btn-primary'%>
+        <%= button_to "Delete Company", company_path, method: "delete", form: {style: 'display:inline-block;'}, class: 'btn btn-primary'%>
+      </div>
+		</div>
+    <div class="col-md-10 col-centered col-md-offset-1 margin-top-lg">
+      <%= @company.description %>
+    </div>
+		<div class="panel-footer">
+			<div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="panel panel-default">
+					<div class="panel-heading">Founders</div>
+					<div class="panel-body">
+            <%= button_to "Add Founder", new_founder_path, method: "get", form: {style: 'display:inline-block;'}, class: 'btn btn-primary'%>
+          </div>
+				</div>
+			</div>
+		</div>
+    <div class="panel-footer">
+			<div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="panel panel-default">
+					<div class="panel-heading">Categories</div>
+					<div class="panel-body">bla bla</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

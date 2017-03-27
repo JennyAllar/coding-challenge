@@ -1,14 +1,11 @@
-<!-- <div class="panel panel-default">
-  <% @companies.each do |company| %>
-  <div class="panel-body">
-    <%= link_to company.name, company_path(company) %>, <%= company.location %>
-  </div>
-  <% end %>
-</div> -->
 <% @companies.each do |company| %>
 <div class="panel panel-default">
   <div class="panel-heading">
-    <h3 class="panel-title"><%= link_to company.name %> &#124; <%= company.location %></h3>
+    <h3 class="panel-title">
+      <%= link_to company.name, company_path(company) %> &#124;
+      <%= company.location %>
+      <span class="details"><%= link_to "more...", company_path(company) %></span>
+    </h3>
   </div>
   <div class="panel-body">
     <%= company.description %>

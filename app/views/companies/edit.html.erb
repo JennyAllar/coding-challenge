@@ -1,7 +1,32 @@
-<%= form_for @company do |f| %>
-  <%= f.text_field :name %>
-  <%= f.text_field :location %>
-  <%= f.text_area :description, size: "60x12" %>
-  <%= f.text_field :fun_fact %>
-  <%= f.submit "Update Company" %>
-<% end %>
+<div class="panel panel-default" style="margin-left: 15px; margin-right: 15px">
+   <div class="panel-heading">
+     <h3 class="panel-title">Create a new company</h3>
+   </div>
+   <div class="panel-body">
+     <div class="row">
+       <div class="col-md-12">
+         <%= form_for @company do |f| %>
+         <%= label_tag(:name, "Company Name") %>
+         <%= f.text_field :name, class: 'form-control', required: true %>
+       </div>
+       <div class="col-md-4">
+         <%= label_tag(:name, "City") %><br>
+         <%= f.text_field :city, class: 'form-control', required: true %>
+       </div>
+       <div class="col-md-4">
+         <%= label_tag(:name, "State") %><br>
+         <%= f.select :state, options_for_select(us_states, @company.state), {}, class: "form-control", required: true %>
+       </div>
+       <div class="col-md-4">
+         <%= label_tag(:name, "Founded Date") %><br>
+         <%= f.text_field :date_founded, class: 'form-control', id: 'date-founded' %>
+       </div>
+       <div class="col-md-12">
+         <%= label_tag(:description, "Description") %>
+         <%= f.text_area :description, class: 'form-control', size: '60x12', required: true %>
+         <%= f.submit "Update", class: 'btn-primary align-right margin-top-sm' %>
+       </div>
+     </div>
+     <% end %>
+   </div>
+</div>
