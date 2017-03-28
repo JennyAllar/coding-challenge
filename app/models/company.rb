@@ -1,6 +1,6 @@
 class Company < ActiveRecord::Base
   has_many :founders
-  validates_presence_of :name, :city, :state, :description
+  validates_presence_of :name, :city, :state, :date_founded, :description
 
   def location
     "#{city}, #{state}"
