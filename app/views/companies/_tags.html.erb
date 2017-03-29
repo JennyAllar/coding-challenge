@@ -1,0 +1,22 @@
+<div class="panel-footer">
+  <div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="panel panel-default">
+      <div class="panel-heading">Categories</div>
+      <div class="panel-body">
+        <div class="col-md-4 align-right margin-top-lg">
+          <%= form_for @company do |f| %>
+            <%= f.text_field :tag_list, class: 'form-control', value: @company.list_of_tags, required: true %>
+            <%= f.submit "Add Tags", class: 'btn btn-primary align-left margin-top-sm'%>
+          <% end %>
+        </div>
+        <div class="col-md-8">
+          <% @company.tag_list.each do |tag| %>
+          <div class="col-md-6">
+            <h2><%=link_to tag, tag_path(tag) %></h2>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

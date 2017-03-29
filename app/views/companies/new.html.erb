@@ -4,8 +4,8 @@
    </div>
    <div class="panel-body">
      <div class="row">
+       <%= form_for @company do |f| %>
        <div class="col-md-12">
-         <%= form_for @company do |f| %>
          <%= label_tag(:name, "Company Name") %>
          <%= f.text_field :name, class: 'form-control', required: true %>
        </div>
@@ -19,7 +19,7 @@
        </div>
        <div class="col-md-4">
          <%= label_tag(:name, "Founded Date") %><br>
-         <%= f.text_field :date_founded, class: 'form-control', id: 'date-founded', required: true %>
+         <%= f.date_field :date_founded, class: 'datepicker form-control', id: 'date-founded', required: true %>
        </div>
        <div class="col-md-12">
          <%= label_tag(:description, "Description") %>

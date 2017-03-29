@@ -1,3 +1,7 @@
+<div class="col-md-12 col-centered col-md-offset-5">
+  <%= button_to "Create New Company", new_company_path, method: 'get', data: { no_turbolink: true }, class: 'btn btn-primary' %>
+</div>
+<br>
 <% @companies.each do |company| %>
 <div class="panel panel-default">
   <div class="panel-heading">
@@ -15,5 +19,5 @@
 
 
 <div class="footer navbar-fixed-bottom">
-  <%= link_to "Create Company", new_company_path %>
+  <%= button_to "Create New Company", new_company_path, data: { no_turbolink: true }, class: 'btn btn-default' %>
 </div>

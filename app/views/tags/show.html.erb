@@ -1,0 +1,15 @@
+<div class="panel panel-default" style="margin-left: 15px; margin-right: 15px">
+   <div class="panel-heading">
+     <h3 class="panel-title centered"><%= @tag.name %></h3>
+   </div>
+   <div class="panel-body">
+     <div class="row">
+       <div class="col-md-12 centered">
+         Companies with <%= @tag.name %> tag:<br>
+         <% @companies.each do |company| %>
+           <%=link_to company.name, company_path(company) %><br>
+         <% end %>
+       </div>
+     </div>
+   </div>
+</div>

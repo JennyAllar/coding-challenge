@@ -1,6 +1,6 @@
 class CompaniesController < ApplicationController
   def index
-    @companies = Company.all
+    @companies = Company.order(id: :asc)
   end
 
   def new
@@ -8,8 +8,11 @@ class CompaniesController < ApplicationController
   end
 
   def create
-    Company.create(company_params)
-    redirect_to Company
+    @company = Company.new(company_params)
+    if @company.save
+      flash[:success] = "Company added"
+      redirect_to Company
+    end
   end
 
   def show
@@ -23,14 +26,19 @@ class CompaniesController < ApplicationController
 
   def update
     @company = Company.find(params[:id])
-    @company.update_attributes(company_params)
-    redirect_to companies_path
+    if @company.update_attributes(company_params)
+      flash[:notice] = "#{@company.name} updated"
+      redirect_to company_path(@company)
+    end
   end
 
   def destroy
     @company = Company.find(params[:id])
     @company.destroy
-    redirect_to companies_path
+    if @company.destroy
+      flash[:notice] = "Company deleted"
+      redirect_to companies_path
+    end
   end
 
   def states
@@ -40,6 +48,6 @@ class CompaniesController < ApplicationController
   private
 
   def company_params
-    params.require(:company).permit(:name, :city, :state, :description, :date_founded)
+    params.require(:company).permit(:name, :city, :state, :description, :date_founded, :tag_list)
   end
 end

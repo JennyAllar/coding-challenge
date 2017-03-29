@@ -14,13 +14,17 @@ class FoundersController < ApplicationController
       company_id: params[:company_id])
 
     if @founder.save
+      flash[:success] = "Founder added"
       redirect_to company_path(@company)
     end
   end
 
-  private
-
-  def founder_params
-    params.require(:founder).permit(:company_id).permit(:first_name, :last_name, :title)
+  def destroy
+    @company = Company.find(params[:company_id])
+    @founder = Founder.find(params[:id])
+    if @founder.destroy
+      flash[:notice] = "Founder deleted"
+      redirect_to company_path(@company)
+    end
   end
 end

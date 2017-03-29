@@ -1,2 +1,2 @@
-jQuery ->
-  $('#date-founded').datepicker()
+unless Modernizr.inputtypes.date
+  $("input[type='date']").datepicker()

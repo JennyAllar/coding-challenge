@@ -7,21 +7,30 @@
 }
 
 .panel-heading {
-  background-color: #70929E !important
+  background-color: #6E91A4 !important
 }
+
 .panel-body {
   background-color: #dde9ed;
-  // #259C52
 }
 
 .panel-title {
   font-size: 18px;
 }
 
+.btn-primary {
+  background-color: #259C52 !important
+}
+
 .details {
+  a {
+    color: white;
+  }
   float: right;
-  background-color: white;
-  color: black;
+}
+
+#founder-name {
+  font-size: 2em;
 }
 
 .small-input {
@@ -31,6 +40,10 @@
 
 .align-right {
   float: right;
+}
+
+.align-left {
+  float: left;
 }
 
 .centered {
@@ -62,8 +75,8 @@
   margin-right: 5px;
 }
 
-.footer {
-  background-color: #259C52;
+.margin-bottom-lg {
+  margin-bottom: 20px;
 }
 
 .btn-group {
