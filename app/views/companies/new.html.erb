@@ -10,15 +10,15 @@
          <%= f.text_field :name, class: 'form-control', required: true %>
        </div>
        <div class="col-md-4">
-         <%= label_tag(:name, "City") %><br>
+         <%= label_tag(:city, "City") %><br>
          <%= f.text_field :city, class: 'form-control', required: true %>
        </div>
        <div class="col-md-4">
-         <%= label_tag(:name, "State") %><br>
+         <%= label_tag(:state, "State") %><br>
          <%= f.select :state, options_for_select(us_states), {}, class: "form-control", required: true %>
        </div>
        <div class="col-md-4">
-         <%= label_tag(:name, "Founded Date") %><br>
+         <%= label_tag(:date_founded, "Founded Date") %><br>
          <%= f.date_field :date_founded, class: 'datepicker form-control', id: 'date-founded', required: true %>
        </div>
        <div class="col-md-12">
