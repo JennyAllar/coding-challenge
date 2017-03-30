@@ -12,12 +12,18 @@
         <%= button_to "Delete Company", company_path, method: "delete", form: {style: 'display:inline-block;'}, class: 'btn btn-primary'%>
       </div>
 		</div>
-    <div class="col-md-8 margin-top-lg">
-      <%= @company.description %>
-    </div>
-		<div class="col-md-4 margin-top-lg centered logo">
-			<%= image_tag @company.logo.thumb.url %>
-		</div>
+		<% if @company.logo? %>
+	    <div class="col-md-8 margin-top-lg">
+	      <%= @company.description %>
+	    </div>
+			<div class="col-md-4 margin-top-lg centered logo">
+				<%= image_tag @company.logo.thumb.url %>
+			</div>
+		<% else %>
+			<div class="col-md-10 col-centered col-md-offset-1 margin-top-lg">
+				<%= @company.description %>
+			</div>
+		<% end %>
 		<%= render "founders" %>
     <%= render "tags" %>
   <%= link_to "Back to Companies", companies_path, class: 'align-right' %>
