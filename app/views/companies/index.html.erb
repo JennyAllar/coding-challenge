@@ -12,7 +12,18 @@
     </h3>
   </div>
   <div class="panel-body">
-    <%= company.description %>
+    <% if company.logo? %>
+      <div class="col-md-8 margin-top-lg">
+        <%= company.description %>
+      </div>
+      <div class="col-md-4 margin-top-lg centered logo">
+        <%= image_tag company.logo.thumb.url %>
+      </div>
+    <% else %>
+      <div class="col-md-12 margin-top-lg">
+        <%= company.description %>
+      </div>
+    <% end %>
   </div>
 </div>
 <% end %>

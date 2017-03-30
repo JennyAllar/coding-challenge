@@ -3,9 +3,9 @@ class Company < ActiveRecord::Base
   has_many :categories
   has_many :tags
   validates_presence_of :name, :city, :state, :date_founded, :description
+  mount_uploader :logo, LogoUploader
   acts_as_taggable
 
-  # attr_accessor :tag_list
 
   def location
     "#{city}, #{state}"

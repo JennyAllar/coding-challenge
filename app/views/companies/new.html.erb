@@ -21,10 +21,14 @@
          <%= label_tag(:date_founded, "Founded Date") %><br>
          <%= f.date_field :date_founded, class: 'datepicker form-control', id: 'date-founded', required: true %>
        </div>
-       <div class="col-md-12">
+       <div class="col-md-8">
          <%= label_tag(:description, "Description") %>
          <%= f.text_area :description, class: 'form-control', size: '60x12', required: true %>
          <%= f.submit "Save", class: 'btn btn-primary align-right margin-top-sm' %>
+       </div>
+       <div class="col-md-4">
+         <%= f.label :logo %><br>
+         <%= f.file_field :logo %>
        </div>
      </div>
      <% end %>
